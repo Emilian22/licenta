@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="jumbotron">
+        <button ng-if="tip" class="btn btn-primary btn-block" ng-click="adaugaCurs()" >Adăugare Curs</button>
+        </br>
+        <div class="panel panel-default" ng-repeat="course in courses">
+            <div class="panel-body">{{course.cTitle}}
+            <input class="btn btn-primary pull-right" ng-if="afisare(course) && tip==true" type="button" value="Accesare Curs" ng-Click="getInfo(course)">
+            <input class="btn btn-primary pull-right" ng-if="tip==false && dataCurs(course)" type="button" value="Accesare Curs" ng-Click="getInfo(course)">
+            </div>
+            <div class="panel-footer">
+            Perioadă Disponibilă: {{course.cBeginDate|date:medium}} - {{course.cEndDate|date:medium}}
+            </br>
+            Numărul maxim de zile: {{course.cMaxDays}}
+            </br>
+            Descriere: {{course.cDescription}}
+            </div>
+        </div>
+    </div>
+</div>

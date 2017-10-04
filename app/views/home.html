@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="jumbotron">
+        <h2 class="text-center">Bine ați venit în aplicația de e-learning</h2>
+        <h3 class="text-center">Mai jos puteți vedea câteva dintre statisticile site-ului</h3>
+        <h4 class="text-center">1. Numărul total de studenți: {{numarStudenti[0].count}}</h4>
+        <h4 class="text-center">2. Numărul total de profesori: {{numarProfesori[0].count}}</h4>
+        <h4 class="text-center">3. Numărul total de cursuri: {{numarCursuri[0].count}}</h4>
+        <h4 class="text-center">4. Numărul cursuri active: {{numarCursuriActive}}</h4>
+        <h4 class="text-center">5. Numărul cursuri inactive: {{numarCursuriInactive}}</h4>
+        <div class="form-group row">
+            <div class="col-sm-2">Tipuri de utilizatori: </div>
+            <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-colors="colors" chart-options="options"></canvas>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2">Cursuri Active/Inactive: </div>
+            <canvas id="pie" class="chart chart-pie" chart-data="data1" chart-labels="labels1" chart-colors="colors1" chart-options="options1"></canvas>
+        </div>
+    </div>
+</div>

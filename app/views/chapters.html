@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="jumbotron">
+        <h2 class="text-center verdeInchis">{{course.cTitle}}</h1>
+            <button class="btn btn-primary btn-block" ng-if="tipChapters" ng-Click="addChapter()">Adaugă Capitol</button>
+            </br>
+            <div class="col-sm-3">
+                <div ng-if="gasit" ng-repeat="chapter in chapters">
+                    <div class="form-group row">
+                        <button class="btn btn-primary" id="buttonChapter" ng-Click="getIdChapter(chapter.id)">{{chapter.chTitle}}</button>
+                    </div>
+                </div>
+                <div ng-if="gasit">
+                    <div class="form-group row">
+                        <button class="btn btn-primary" ng-Click="accesareTest(course)">Test</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div ng-if="gasit" class="panel panel-default">
+                    <div class="panel-heading">{{chapter.chDescription}}</div>
+                    <div id="chText" class="panel-body">
+                        {{chapter.chText}}
+                        </br>
+                        </br>
+                        </br>
+                        <a href={{chapter.chBlob}} ng-if="fisierGasit(chapter)">Material Extra.pdf</a>
+                        
+                        <div class="form-group">
+                        <button ng-if="tipChapters" class="btn btn-primary center" ng-Click="schimba()">Adaugă fișier</button>
+                        </div>
+                        <input class="center" ng-if="tipChapters && addFiles" type="file" id="addChBlob" name="addChBlob" ngf-select="onFileSelect($files)" />
+                        
+                        
+                    </div>
+                    
+                    
+                    <div ng-if="tipChapters" class="panel-footer">
+                        <div class="btn-toolbar">
+                            <div class="col-sm-6">
+                                <button class="btn btn-block btn-primary" ng-Click=editChapter(chapter)>Editează Capitol</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn btn-block BloodRed" ng-Click=deleteChapter(chapter)>Șterge Capitol</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <button class="btn btn-primary btn-block" ng-if="tipChapters" ng-Click="editCourse(course)">Editează Curs</button>
+            <button class="btn BloodRed btn-block" ng-if="tipChapters" ng-Click="deleteCourse(course)">Șterge Curs</button>
+    </div>
+    <form name="commentForm">
+        <div class="container pb-cmnt-container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-info">
+                        <div class="panel-body">
+                            <textarea class="pb-cmnt-textarea" placeholder="Introduceți textul comentariului aici" ng-model="comment.pcomText" my-enter="sendComment(comment)"></textarea>
+                            <form class="form-inline">
+                                <button class="btn btn-primary pull-right" type="button" ng-Click="sendComment(comment)">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="container">
+        <div ng-repeat="comment in comments" class="panel panel-default">
+            <div class="panel-heading"> {{comment.userName}} at {{comment.createdAt|date:'MMMM, dd yyyy, hh:mm a':'Z'}}</div>
+            <div class="panel-body">{{comment.description}}</div>
+        </div>
+    </div>
+</div>

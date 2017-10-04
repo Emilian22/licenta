@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="jumbotron">
+        <form>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="editCTitle">Title:</label>
+                <input type="text" id="editCTitle" name="editCTitle" ng-model="course.cTitle" />
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="editCDescription">Description: </label>
+                <textarea id="editCDescription" name="editCDescription" ng-model="course.cDescription" />
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="editCBeginDate">Begin Date: </label>
+                <input type="date" id="editCBeginDate" name="editCBeginDate" ng-model="course.cBeginDate">
+            </div> 
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="editCEndDate">End Date: </label>
+                <input type="date" id="editCEndDate" name="editCEndDate" ng-model="course.cEndDate">
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="editCMaxDays">Max Days: </label>
+                <input type="number" id="editCMaxDays" name="editCMaxDays" ng-model="course.cMaxDays">
+            </div>
+            <div class="form-group row">
+                <button class="col-sm-2 btn btn-primary" id="editCourseButton" ng-Click="saveCourse(course)">Salvare Modificări</button>
+                <button class="col-sm-2 btn btn-danger" id="editCourseCancelButton" ng-Click="cancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center">Testul Final!</h1>
+        <div class="panel panel-default" ng-repeat="question in questionss">
+            <div class="panel-body">{{question.qText}}
+            <button ng-if="tipUtilizator" class="btn pull-right BloodRed" ng-Click="stergeIntrebare(question)">Șterge întrebare</button>
+            </div>
+            <div class="panel-footer" ng-repeat="answer in question.answers" ng-if="raspuns(question)">
+                <button ng-if="tipUtilizator==false" ng-click="arataAnswer(answer)"></button> {{answer.aText}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <button class="btn btn-block btn-primary" ng-if="tipUtilizator==true" ng-Click="schimba()">Adaugă Întrebare</button>
+            <button class="btn btn-block btn-primary" ng-if="tipUtilizator==false" ng-Click="nota()">Salvare Răspunsuri</button>
+            </br>
+            <form ng-if="tip">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="addQText">Întrebare: </label>
+                    <input type="text" id="addQText" name="addQText" ng-model="question.qText" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="addA1Text">Răspunsul 1: </label>
+                    <input type="text" id="addA1Text" name="addA1Text" ng-model="answers[0].aText" />
+                    <input class="form-check-input" type="radio" name="correctAnswer" value="0" ng-model='correctAnswer'>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="addA2Text">Răspunsul 2: </label>
+                    <input type="text" id="addA2Text" name="addA2Text" ng-model="answers[1].aText" />
+                    <input class="form-check-input" type="radio" name="correctAnswer" value="1" ng-model='correctAnswer'>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="addA3Text">Răspunsul 3: </label>
+                    <input type="text" id="addA3Text" name="addA3Text" ng-model="answers[2].aText" />
+                    <input class="form-check-input" type="radio" name="correctAnswer" value="2" ng-model='correctAnswer'>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="addA2Text">Răspunsul 4: </label>
+                    <input type="text" id="addA4Text" name="addA4Text" ng-model="answers[3].aText" />
+                    <input class="form-check-input" type="radio" name="correctAnswer" value="3" ng-model='correctAnswer'>
+                </div>
+                <div class="form-group row">
+                    <button class="col-sm-2 col-form-label btn btn-primary" ng-Click="addQuestion(question,answers,correctAnswer)">Adăugă întrebare</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

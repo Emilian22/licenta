@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="jumbotron">
+        <form>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="editChTitle">Title: </label>
+                <input type="text" id="editChTitle" name="editChTitle" ng-model="chapter.chTitle" />
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="editChDescription">Description: </label>
+                <textarea id="editChDescription" name="editChDescription" ng-model="chapter.chDescription"/>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="editChText">Text: </label>
+                <textarea id="editChText" name="editChText" ng-model="chapter.chText"/>
+            </div>
+            <div class="form-group row">
+                <button class="col-sm-2 btn btn-primary" id="saveChapterButton" ng-Click="saveChapter(chapter)">Salvează modificări</button>
+                <button class="col-sm-2 btn btn-danger" id="editChapterCancelButton" ng-Click="cancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

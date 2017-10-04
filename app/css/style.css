@@ -1,0 +1,75 @@
+.clear {
+    clear: both;
+}
+
+.pb-cmnt-container {
+    font-family: Lato;
+    margin-top: 20;
+}
+
+.pb-cmnt-textarea {
+    resize: none;
+    height: 130px;
+    width: 100%;
+}
+
+.pointer {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+#addCDescription {
+    min-height: 100px;
+    min-width: 500px;
+    resize: none;
+}
+
+#addChDescription {
+    resize: none;
+    min-height: 100px;
+    min-width: 500px;
+}
+
+#addChText {
+    resize: none;
+    min-height: 300px;
+    min-width: 500px;
+}
+
+#addChapterCancelButton {
+    min-width: 400px;
+}
+
+#addChapterButton {
+    min-width: 400px;
+}
+
+#logged:hover {
+    color: #777 !important;
+}
+
+.BloodRed {
+    background-color: #8A0707;
+    color: white;
+}
+
+#pie {
+    max-height: 350px;
+    max-width: 350px;
+}
+
+#bar {
+    max-height: 300px;
+    max-width: 400px;
+}
+
+.center {
+    margin: 0 auto;
+    display: block !important;
+}
+#bar1{
+    max-height: 300px;
+    max-width: 600px;
+}

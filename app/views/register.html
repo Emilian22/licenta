@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="jumbotron">
+        <form>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="usernameRegister">Username:</label>
+                <input type="text" id="usernameRegister" name="usernameRegister" ng-model="user.sName" />
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="passwordRegister">Password: </label>
+                <input type="password" id="passwordRegister" name="passwordRegister" ng-model="user.sPassword" />
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="emailRegister">E-Mail: </label>
+                <input type="email" id="emailRegister" name="emailRegister" ng-model="user.sEmail" />
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <div class="form-check">
+                        <label for="tipUser" class="form-check-label">
+                            <input type="radio" name="tipUser" value="student" ng-model='tipUser'>Student
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="form-check">
+                        <label for="tipUser" class="form-check-label">
+                            <input type="radio" name="tipUser" value="profesor" ng-model='tipUser'>Profesor
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <input class="btn-primary col-sm-2" type="button" id="registerButton" value="Register" ng-Click="register(user)">
+                <input class="btn-danger col-sm-2" type="button" id="registerCancel" value="Cancel" ng-Click="cancel()">
+            </div>
+        </form>
+    </div>
+</div>

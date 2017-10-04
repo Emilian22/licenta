@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "angular-chart.js": "0.2.7",
+    "angular-cookies": "^1.6.4",
+    "body-parser": "^1.15.2",
+    "chart.js": "^2.6.0",
+    "connect-multiparty": "^2.0.0",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "fs-path": "0.0.23",
+    "multiparty": "^4.1.3",
+    "mysql": "^2.12.0",
+    "ng-file-upload": "^12.2.13",
+    "sequelize": "^3.27.0"
+  }
+}

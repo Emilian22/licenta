@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="jumbotron">
+        <div class="panel panel-default" ng-repeat="professor in professors">
+            <div class="panel-body">
+                Username: {{professor.pName}}
+                </br>
+                <button class="btn btn-primary pull-right" ng-Click="acceptareProfessor(professor)">Acceptare Profesor</button>
+                </br>
+                E-mail: {{professor.pEmail}}
+            </div>
+        </div>
+    </div>
+</div>

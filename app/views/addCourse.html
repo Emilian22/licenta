@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="jumbotron">
+        <form>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="addCTitle">Title: </label>
+                <input type="text" id="addCTitle" name="addCTitle" ng-model="course.cTitle" />
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="addCDescription">Description: </label>
+                <textarea id="addCDescription" name="addCDescription" ng-model="course.cDescription" />
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="addCBeginDate">Begin Date: </label>
+                <input type="date" id="addCBeginDate" name="addCBeginDate" ng-model="course.cBeginDate">
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="addCEndDate">End Date: </label>
+                <input type="date" id="addCEndDate" name="addCEndDate" ng-model="course.cEndDate">
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="addCMaxDays">Max Days: </label>
+                <input type="number" id="addCMaxDays" name="addCMaxDays" ng-model="course.cMaxDays">
+            </div>
+            <div class="form-group row">
+                <button class="col-sm-2 btn btn-primary" id="addCourseButton" ng-Click="addCourse(course)">Adaugă Curs</button>
+                <button class="col-sm-2 btn btn-danger" id="addCourseCancelButton" ng-Click="cancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

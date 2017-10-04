@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="jumbotron">
+        <h2 class="text-center">Bine ați venit pe pagina personala, {{userName}} </h2>
+        <h3 class="text-center" ng-if="tipProfil">Cursurile create de dumneavoastră se regăsesc mai jos: </h3>
+        <h3 class="text-center" ng-if="tipProfil==false">Cursurile la care sunteți înscris se regăsesc mai jos:</h3>
+        <div class="panel panel-default" ng-repeat="course in courses">
+            <div class="panel-body">{{course.cTitle}}
+                <input type="button" class="btn btn-primary pull-right" ng-if="tipProfil==true" value="Accesare Curs" ng-Click="enterCourse(course)">
+                <input type="button" class="btn btn-success pull-right" ng-if="tipProfil==false && acceptatCurs(course)" value="Accesare Curs" ng-Click="enterCourse(course)">
+                <input type="button" class="btn btn-warning pull-right" ng-if="tipProfil==false && acceptatCurs(course)==false" value="Accesare Curs" ng-Click="enterCourse(course)">
+
+            </div>
+            <div class="panel-footer">
+                Perioadă Disponibilă: {{course.cBeginDate|date:medium}} - {{course.cEndDate|date:medium}}
+                <input type="button" ng-if="tipProfil" class="btn btn-primary pull-right" value="Gestionare Cereri" ng-Click="gestionareCereri(course)">
+                </br>
+                Numărul maxim de zile: {{course.cMaxDays}}
+                <div class="pull-right" ng-if="tipProfil==false && courseGrade(course)">Nota obtinuta: {{course.csGrade}}</div>
+                <div class="pull-right" ng-if="tipProfil==false && !courseGrade(course) && acceptatCurs(course) && dataCurs(course)">Curs neterminat</div>
+                <div class="pull-right" ng-if="tipProfil==false && !acceptatCurs(course)">Nu ați fost încă acceptat la curs!</div>
+                <div class="pull-right" ng-if="tipProfil==false && acceptatCurs(course) && !courseGrade(course) && !dataCurs(course)">Cursul acesta este arhivat!</div>
+                </br>
+                Descriere: {{course.cDescription}}
+            </div>
+        </div>
+        <div class="form-group row" ng-if="tipProfil==false">
+            <div class="col-sm-2">Statistici Cursuri: </div>
+            <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-colors="colors" chart-options="options"></canvas>
+        </div>
+        <div class="form-group row" ng-if="tipProfil==false">
+            <div class="col-sm-2">Frecvență note: </div>
+            <canvas id="bar" class="chart chart-bar" chart-data="note" chart-labels="labels1" chart-options="options2"></canvas>
+        </div>
+        <div class="form-group row" ng-if="tipProfil==true">
+            <div class="col-sm-2">Numar Elevi: </div>
+            <canvas id="bar1" class="chart chart-bar" chart-data="courseNumber" chart-labels="courseNames" chart-options="options1"></canvas>
+        </div>
+    </div>
+</div>

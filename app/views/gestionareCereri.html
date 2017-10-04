@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="jumbotron">
+        <h2 class="text-center" ng-if="!gasit">Nu aveți cereri noi de participare la acest curs!</h2>
+        <h2 class="text-center" ng-if="gasit">Mai jos aveți lista studenților ce vor să participe la acest curs:</h2>
+        <div class="panel panel-default" ng-if="gasit" ng-repeat="link in links">
+            <div class="panel-body">
+                Studentul {{link.sName}} dorește participarea la cursul {{link.cTitle}}
+                <div class="btn-toolbar pull-right">
+                    <button class="btn btn-primary" ng-click="acceptaCerere(link)">Acceptă cererea</button>
+                    <button class="btn BloodRed" ng-click="stergeCerere(link)">Șterge cererea</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
